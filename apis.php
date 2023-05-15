@@ -12,12 +12,8 @@
  * and create a file with same name in modules directory.
  */
 $apis = [
-  // The file search_drink.php should be created in modules directory.
-  'search_drink',
-  // The file random_drink.php should be created in modules directory.
-  'random_drink',
-  // The file add_drink.php should be created in modules directory.
-  'add_drink',
-  // The file user_login.php should be created in modules directory.
-  'user_login',
+  // The file news.php should be created in modules directory.
+  'news',
+  // The file credit_debit_form.php should be created in modules directory.
+  'credit_debit_form',
 ];

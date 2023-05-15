@@ -7,14 +7,14 @@
 
 $groups = [
   // Machine name of the group.
-  'drinks' => [
+  'news' => [
     // Display name of the group.
-    'name' => 'Drinks',
+    'name' => 'News API',
     // Description that goes with this group.
-    'description' => 'Everything that is related with your drinks.',
+    'description' => 'API for retrieving latest 5 news contents in app.',
   ],
-  'users' => [
-    'name' => 'Users',
-    'description' => 'All the operations related with users.',
+  'credit_debit_form' => [
+    'name' => 'Credit Debit Form API',
+    'description' => 'API to retrieve all Credit and Debit forms.',
   ],
 ];
