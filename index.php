@@ -57,7 +57,7 @@ require_once 'groups.php';
               <div id="<?php echo $endpoint_name; ?>-collapse" class="accordion-collapse collapse" aria-labelledby="<?php echo $endpoint_name; ?>-header" data-bs-parent="#apiDoc-<?php print $group_name; ?>">
                 <div class="accordion-body">
                   <div class="description mb-2"><?php print $endpoint['description']; ?></div>
-                  <?php $request_fn = $module . '_request'; ?>
+                  <?php $request_fn = $endpoint_name . '_request'; ?>
                   <?php $parameters = $request_fn(); ?>
                   <?php $example_request = []; ?>
                   <div class="table-responsive">
@@ -115,7 +115,7 @@ require_once 'groups.php';
                     </div>
                   <?php endif; ?>
 
-                  <?php $response_fn = $module . '_response'; ?>
+                  <?php $response_fn = $endpoint_name . '_response'; ?>
                   <?php $response = $response_fn(); ?>
                   <div class="table-responsive">
                     <table class="table table-light table-hover caption-top small">
