@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>E-Kolgaon APIs</title>
+  <style>
+    body {
+      font-family: Ubuntu;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar navbar-expand-md navbar-dark bg-primary">
+    <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+      <a class="navbar-brand p-0 me-2" href="/" aria-label="Bootstrap">
+        <h3>E-Kolgaon APIs<sup></sup></h3>
+      </a>
+    </nav>
+  </header>
+
+  <div class="container my-5">
+    <p class="font-monospace">Base URL: http://kolgaongrampanchayat.org</p>
+    <p class="fw-bolder">News API<span class="small fw-light"> - API for retrieving latest 5 news contents in
+        app.</span></p>
+    <div class="accordion mb-4" id="apiDoc-news">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="news-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#news-collapse"
+            aria-expanded="true" aria-controls="news-collapse">
+            <p class="lead m-0"><span class="me-2 badge bg-primary" style="min-width:65px;">GET</span>&nbsp;<span
+                class="text-dark fs-6">/api/news - News API</span></p>
+          </button>
+        </h2>
+        <div id="news-collapse" class="accordion-collapse collapse" aria-labelledby="news-header"
+          data-bs-parent="#apiDoc-news">
+          <div class="accordion-body">
+            <div class="description mb-2">API for retrieving latest 5 news contents in app with
+              <b>basic_auth,cookie</b>.</div>
+            <div class="table-responsive">
+              <table class="table table-light table-hover caption-top small">
+                <caption>Request Parameters</caption>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-monospace">nid</td>
+                    <td>
+                      <strong>Yes</strong>
+                    </td>
+                    <td>String. pass <b>Node ID</b> in endpoint URL, i.e. <b>/api/credit_debit_form/1</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-light table-hover caption-top small">
+                <caption>Responses</caption>
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>200</td>
+                    <td>
+                      <div class="bg-dark text-white p-2 mb-2">
+                        <pre class="m-0">{
+    "status": "true",
+    "data": {
+        "field_description": "Test credit card",
+        "field_transaction_no": "1",
+        "field_total_amount": "200",
+        "field_date": "2023-05-11",
+        "field_select_type": "Credit",
+        "field_remarks": "Paid"
+    }
+}                                </div>
+                                                          </td>
+                          </tr>
+                                                  <tr>
+                            <td>400</td>
+                            <td>
+                                                                                              <div class="bg-dark text-white p-2 mb-2">
+                                  <pre class="m-0">{
+    "status": "bool",
+    "error": {
+        "message": "string",
+        "statusCode": "int"
+    }
+}                                </div>
+                                                          </td>
+                          </tr>
+                                              </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  </div>
+              <p class="fw-bolder">Credit Debit Form API<span class="small fw-light"> - API to retrieve all Credit and Debit forms.</span></p>
+        <div class="accordion mb-4" id="apiDoc-credit_debit_form">
+                      <div class="accordion-item">
+              <h2 class="accordion-header" id="credit_debit_form-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#credit_debit_form-collapse" aria-expanded="true" aria-controls="credit_debit_form-collapse">
+                                                      <p class="lead m-0"><span class="me-2 badge bg-primary" style="min-width:65px;">GET</span>&nbsp;<span class="text-dark fs-6">/api/credit_debit_form/{nid} - Credit Debit Form API</span></p>
+                </button>
+              </h2>
+              <div id="credit_debit_form-collapse" class="accordion-collapse collapse" aria-labelledby="credit_debit_form-header" data-bs-parent="#apiDoc-credit_debit_form">
+                <div class="accordion-body">
+                  <div class="description mb-2">API to retrieve all Credit and Debit forms in app with <b>basic_auth, cookie</b>.</div>
+                                                                        <div class="table-responsive">
+                    <table class="table table-light table-hover caption-top small">
+                      <caption>Request Parameters</caption>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Required</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                                                                              <tr>
+                              <td class="font-monospace">nid</td>
+                              <td>
+                                                                  <strong>Yes</strong>
+                                                              </td>
+                              <td>String. pass <b>Node ID</b> in endpoint URL, i.e. <b>/api/credit_debit_form/1</b></td>
+                            </tr>
+                                                                                                    </tbody>
+                    </table>
+                  </div>
+
+                                                      <div class="table-responsive">
+                    <table class="table table-light table-hover caption-top small">
+                      <caption>Responses</caption>
+                      <thead>
+                        <tr>
+                          <th>Code</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                                                  <tr>
+                            <td>200</td>
+                            <td>
+                                                                                              <div class="bg-dark text-white p-2 mb-2">
+                                  <pre class="m-0">{
+    "status": "true",
+    "data": {
+        "field_description": "Test credit card",
+        "field_transaction_no": "1",
+        "field_total_amount": "200",
+        "field_date": "2023-05-11",
+        "field_select_type": "Credit",
+        "field_remarks": "Paid"
+    }
+}                                </div>
+                                                          </td>
+                          </tr>
+                                                  <tr>
+                            <td>400</td>
+                            <td>
+                                                                                              <div class="bg-dark text-white p-2 mb-2">
+                                  <pre class="m-0">{
+    "status": "bool",
+    "error": {
+        "message": "string",
+        "statusCode": "int"
+    }
+}                                </div>
+                                                          </td>
+                          </tr>
+                                              </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+                  </div>
+          </div>
+    <footer class="text-center py-2 mt-2 bg-light">
+      <div class="footer-copyright text-center text-black-50 small">
+          Made by
+          <a class="black-text" target="_blank" href="https://osseed.com/">
+             osseed.com
+          </a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
